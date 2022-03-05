@@ -6,6 +6,8 @@ import org.junit.Test;
 
 public class TestesIntrodutórios {
 
+	public Double memoria ;
+	
 	@Test
 	public void teste_de_soma() {
 		CalculadoraMinha calc = new CalculadoraMinha();
@@ -52,11 +54,22 @@ public class TestesIntrodutórios {
 	}
 	
 	@Test
-	public void Teste_Memorizar() {
+	public void Teste_Com_Memoria() {
 		CalculadoraMinha calc = new CalculadoraMinha();
-		double total = calc.Mem();
-		assertEquals(5,total,0);
-				
+		double total = calc.Somar(10, 10);
+		calc.getMemorizar(total);
+		
+		total = calc.Somar(15, 15);
+		total = calc.Somar(202, 20);
+		
+		double memoria = calc.getMemorizar();
+		
+		assertEquals(222, total, 0);
 	}
-
+	
+	@Test(Expected= MemoriaNaoExisteException.class)
+	public void Teste_sem_Memoria() {
+		CalculadoraMinha calc = new CalculadoraMinha();
+		double memoria = calc.getMemorizar();
+	}
 }
