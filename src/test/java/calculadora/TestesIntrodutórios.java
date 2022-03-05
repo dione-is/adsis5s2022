@@ -50,5 +50,13 @@ public class TestesIntrodutórios {
 		double total = calc.Dividir(30, 0);		
 		assertEquals(0, total, 0);
 	}
+	
+	@Test
+	public void Teste_Memorizar() {
+		CalculadoraMinha calc = new CalculadoraMinha();
+		double total = calc.Mem();
+		assertEquals(5,total,0);
+				
+	}
 
 }

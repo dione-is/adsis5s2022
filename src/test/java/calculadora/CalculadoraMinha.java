@@ -26,5 +26,10 @@ public class CalculadoraMinha {
 		return v1/v2;
 	}
 
+	public double Mem() {
+		double result = Dividir(10, 2);
+		return result;
+	}
+
 
 }
